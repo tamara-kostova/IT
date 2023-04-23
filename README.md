@@ -1,1 +1,1 @@
-# Labaratory exercises - Internet Technologies
+Labaratory exercises - Internet Technologies
