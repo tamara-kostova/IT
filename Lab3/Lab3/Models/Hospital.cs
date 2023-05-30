@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Xml.Linq;
 
 namespace Lab3.Models
 {
@@ -15,7 +16,8 @@ namespace Lab3.Models
         [Display(Name = "Image")]
         public string ImageUrl { get; set; }
         public virtual ICollection<Doctor> Doctors { get; set; }
-        public Hospital() { 
+        public Hospital()
+        {
             Doctors = new List<Doctor>();
         }
     }

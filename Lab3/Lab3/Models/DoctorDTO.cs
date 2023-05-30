@@ -8,11 +8,11 @@ namespace Lab3.Models
     public class DoctorDTO
     {
         public int DoctorId { get; set; }
-        public string Name { get; set; }
         public int HospitalId { get; set; }
         public List <Hospital> Hospitals { get; set; }
+        public string Name { get; set; }
         public DoctorDTO() { 
-            Hospitals = new List<Hospital>(); 
+            Hospitals = new List <Hospital>();
         }
     }
 }

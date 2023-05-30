@@ -34,23 +34,7 @@ namespace Lab3.Controllers
             }
             return View(doctor);
         }
-        public ActionResult AddPatient (int id)
-        {
-            AddPatientToDoctorModel model = new AddPatientToDoctorModel();
-            model.DoctorId = id;
-            model.Patients = db.Patients.ToList();
-            ViewBag.DoctorName = db.Doctors.Find(id).Name;
-            return View (model);
-        }
-        [HttpPost]
-        public ActionResult AddPatient(AddPatientToDoctorModel model)
-        {
-            Doctor doctor = db.Doctors.Find(model.DoctorId);
-            Patient patient = db.Patients.Find(model.PatientId);
-            doctor.Patients.Add(patient);
-            db.SaveChanges();
-            return RedirectToAction("Details/" + model.DoctorId);
-        }
+
         // GET: Doctors/Create
         public ActionResult Create()
         {
@@ -74,6 +58,23 @@ namespace Lab3.Controllers
             }
 
             return View(doctor);
+        }
+        public ActionResult AddPatient(int id)
+        {
+            AddPatient model = new AddPatient();
+            model.DoctorId = id;
+            model.Patients = db.Patients.ToList();
+            ViewBag.DoctorName = db.Doctors.Find(id).Name;
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult AddPatient(AddPatient model)
+        {
+            Doctor doctor = db.Doctors.Find(model.DoctorId);
+            Patient patient = db.Patients.Find(model.PatientId);
+            doctor.Patients.Add(patient);
+            db.SaveChanges();
+            return RedirectToAction("Details/"+model.DoctorId);
         }
 
         // GET: Doctors/Edit/5

@@ -46,7 +46,7 @@ namespace Lab3.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PatientId,Name,PatientCode")] Patient patient)
+        public ActionResult Create([Bind(Include = "PatientId,Name,PatientCode,SelectedGender")] Patient patient)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace Lab3.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PatientId,Name,PatientCode")] Patient patient)
+        public ActionResult Edit([Bind(Include = "PatientId,Name,PatientCode,SelectedGender")] Patient patient)
         {
             if (ModelState.IsValid)
             {

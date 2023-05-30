@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Xml.Linq;
 
 namespace Lab3.Models
 {
@@ -18,8 +19,9 @@ namespace Lab3.Models
         [Display(Name = "Gender")]
         public Gender SelectedGender { get; set; }
         public virtual ICollection<Doctor> Doctors { get; set; }
-        public Patient() { 
-            Doctors = new List <Doctor>();
+        public Patient()
+        {
+            Doctors = new List<Doctor>();
         }
     }
     public enum Gender
