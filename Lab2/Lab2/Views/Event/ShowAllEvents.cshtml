@@ -10,12 +10,14 @@
         <tr>
             <td>Name:</td>
             <td>Location:</td>
+            <td>Id:</td>
         </tr>
         foreach(var element in Model)
         {
 <tr>
     <td>@Html.ActionLink(element.Name, "ShowEvent/", new { id = i })</td>
     <td>@Html.ActionLink(element.Location, "ShowEvent/", new { id = i })</td>
+    <td>@Html.Label(element.Id.ToString())</td>
     <td>@Html.ActionLink("Edit", "EditEvent", new { id = i }, new { @class = "btn btn-primary" })</td>
     <td>@Html.ActionLink("Delete", "DeleteEvent", new { id = i }, new {@class="btn btn-primary"})</td>
 </tr>
